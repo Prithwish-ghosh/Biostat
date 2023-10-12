@@ -10,14 +10,12 @@ library(EnvStats)
 
 library(ggplot2)
 library(readr)
-#setwd("C:/Users/Tapomayee Basu/OneDrive/Documents/Bayes Project/COVID_KD/Code_India")
-#setwd("D:/Meghna/First work/")
-#setwd("C:/Users/PERSONAL/Dropbox/Meghna/First work/")
 
-countries="Kerala"
+
+countries="Maharashtra"
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) == 0) {
-  args = 'base_stan'
+  args = 'base_stan_mh_wm'
 } 
 StanModel = args[1]
 
