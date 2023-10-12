@@ -15,7 +15,7 @@ library(readr)
 countries="Maharashtra"
 args = commandArgs(trailingOnly=TRUE)
 if(length(args) == 0) {
-  args = 'base_stan_mh_wm'
+  args = 'base_stan_mh_wom'
 } 
 StanModel = args[1]
 
@@ -199,9 +199,9 @@ stan_data$y = t(stan_data$y)
 options(mc.cores = parallel::detectCores())
 rstan_options(auto_write = TRUE)
 #rstan_options(auto_write = T)
-m = stan_model(paste0('base_stan_mh_wm.stan'))
+m = stan_model(paste0('base_stan_mh_wom.stan'))
 
-#m = stan_model("D:/Meghna/First work/stan_models/base_gujrat.stan")
+
 
 if(DEBUG) { 
   fit = sampling(m,data=stan_data,iter=40,warmup=20,chains=3)
